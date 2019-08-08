@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C711030722FAC088004FE343 /* WXBannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C711030622FAC088004FE343 /* WXBannerView.m */; };
 		C711030A22FAC0BD004FE343 /* WXBannerViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C711030922FAC0BD004FE343 /* WXBannerViewCell.m */; };
+		C711030E22FBF45A004FE343 /* WXBannerImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C711030D22FBF45A004FE343 /* WXBannerImageCache.m */; };
 		C71D092722FAA77C0058F8D6 /* WXLoadImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = C71D092622FAA77C0058F8D6 /* WXLoadImageView.m */; };
 		C773326322F804D3002F4438 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C773326222F804D3002F4438 /* AppDelegate.m */; };
 		C773326622F804D3002F4438 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C773326522F804D3002F4438 /* ViewController.m */; };
@@ -26,6 +27,8 @@
 		C711030622FAC088004FE343 /* WXBannerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXBannerView.m; sourceTree = "<group>"; };
 		C711030822FAC0BD004FE343 /* WXBannerViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXBannerViewCell.h; sourceTree = "<group>"; };
 		C711030922FAC0BD004FE343 /* WXBannerViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXBannerViewCell.m; sourceTree = "<group>"; };
+		C711030C22FBF45A004FE343 /* WXBannerImageCache.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXBannerImageCache.h; sourceTree = "<group>"; };
+		C711030D22FBF45A004FE343 /* WXBannerImageCache.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXBannerImageCache.m; sourceTree = "<group>"; };
 		C71D092522FAA77C0058F8D6 /* WXLoadImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXLoadImageView.h; sourceTree = "<group>"; };
 		C71D092622FAA77C0058F8D6 /* WXLoadImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXLoadImageView.m; sourceTree = "<group>"; };
 		C773325E22F804D3002F4438 /* WXBannerView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WXBannerView.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +60,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C711030B22FBF429004FE343 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				C711030C22FBF45A004FE343 /* WXBannerImageCache.h */,
+				C711030D22FBF45A004FE343 /* WXBannerImageCache.m */,
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
 		C71D092422FAA7560058F8D6 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +118,7 @@
 		C773327722F804ED002F4438 /* BannerView */ = {
 			isa = PBXGroup;
 			children = (
+				C711030B22FBF429004FE343 /* Cache */,
 				C71D092422FAA7560058F8D6 /* View */,
 				C773328122F97795002F4438 /* Tool */,
 				C773327D22F97287002F4438 /* Layout */,
@@ -214,6 +227,7 @@
 				C773326622F804D3002F4438 /* ViewController.m in Sources */,
 				C711030722FAC088004FE343 /* WXBannerView.m in Sources */,
 				C71D092722FAA77C0058F8D6 /* WXLoadImageView.m in Sources */,
+				C711030E22FBF45A004FE343 /* WXBannerImageCache.m in Sources */,
 				C773327122F804D4002F4438 /* main.m in Sources */,
 				C7781DDE22FA6DF100BAE25C /* WXBannerTool.m in Sources */,
 				C773326322F804D3002F4438 /* AppDelegate.m in Sources */,
