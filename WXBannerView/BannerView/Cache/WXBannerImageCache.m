@@ -76,6 +76,32 @@
     [self clearCachedFailedDic];
 }
 
+- (unsigned long long)imageCachedSize{
+    NSString *directoryPath = WXBannerLoadImages;
+    BOOL isDir = NO;
+    unsigned long long total = 0;
+    if ([[NSFileManager defaultManager] fileExistsAtPath:directoryPath
+                                             isDirectory:&isDir]) {
+        if (isDir) {
+            NSError *error = nil;
+            NSArray *array = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:directoryPath
+                                                                                 error:&error];
+            if (error == nil) {
+                for (NSString *subpath in array) {
+                    NSString *path = [directoryPath stringByAppendingPathComponent:subpath];
+                    NSDictionary *dict = [[NSFileManager defaultManager] attributesOfItemAtPath:path
+                                                                                          error:&error];
+                    if (!error) {
+                        total += [dict[NSFileSize] unsignedIntegerValue];
+                    }
+                }
+            }
+        }
+    }
+    
+    return total;
+}
+
 // MARK: request
 - (void)cacheFailRequest:(NSURLRequest *)request{
     NSNumber *faileTimes = [self.cacheFailedDic objectForKey:[self keyForRequest:request]];

@@ -21,8 +21,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIImage *)cachedImageForRequest:(NSURLRequest *)request;
 /// 缓存图
 - (void)cacheImage:(UIImage *)image forRequest:(NSURLRequest *)request;
-
+/// 清除缓存
 - (void)clearAllCachedImage;
+/// 获取缓存大小，bytes
+- (unsigned long long)imageCachedSize;
 
 // MARK: 缓存失败次数
 /// 缓存失败次数

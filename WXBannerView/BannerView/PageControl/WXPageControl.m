@@ -23,10 +23,7 @@
                         totalPages:totalPages
                          itemWidth:itemWidth
                         itemMargin:itemMargin]){
-        _style = style;
-        _totalPages = totalPages;
-        _itemWidth = itemWidth;
-        _itemMargin = itemMargin;
+        
     }
     return self;
 }
