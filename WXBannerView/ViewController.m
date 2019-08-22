@@ -24,6 +24,17 @@
                               itemMargin:4];
     control.frame = CGRectMake(0, 100, self.view.frame.size.width, 15);
     [self.view addSubview:control];
+    
+//    dispatch_queue_t queue = dispatch_queue_create("com.sivan.wu", DISPATCH_QUEUE_SERIAL);
+//    dispatch_async(queue, ^{
+//        NSLog(@"%@", [NSThread currentThread]);
+//        
+//    });
+//    [NSThread sleepForTimeInterval:1];
+//    dispatch_async(queue, ^{
+//        NSLog(@"%@", [NSThread currentThread]);
+//        
+//    });
 }
 
 

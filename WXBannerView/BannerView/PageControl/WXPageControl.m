@@ -14,48 +14,45 @@
 
 @implementation WXPageControl
 
-- (instancetype)initWithControlStyle:(WXPageControlStyle)style
-                          totalPages:(NSInteger)totalPages
-                           itemWidth:(CGFloat)itemWidth
-                          itemMargin:(CGFloat)itemMargin{
-    if (self = [self initWithFrame:CGRectZero
-                      controlStyle:style
-                        totalPages:totalPages
-                         itemWidth:itemWidth
-                        itemMargin:itemMargin]){
-        
-    }
-    return self;
-}
+//- (instancetype)initWithControlStyle:(WXPageControlStyle)style
+//                          totalPages:(NSInteger)totalPages
+//                           itemWidth:(CGFloat)itemWidth
+//                          itemMargin:(CGFloat)itemMargin{
+//    if (self = [self initWithFrame:CGRectZero
+//                      controlStyle:style
+//                        totalPages:totalPages
+//                         itemWidth:itemWidth
+//                        itemMargin:itemMargin]){
+//
+//    }
+//    return self;
+//}
 
-- (instancetype)initWithFrame:(CGRect)frame
-                 controlStyle:(WXPageControlStyle)style
-                   totalPages:(NSInteger)totalPages
-                    itemWidth:(CGFloat)itemWidth
-                   itemMargin:(CGFloat)itemMargin{
-    if (self = [super initWithFrame:frame]){
-        _normalColor = [UIColor lightGrayColor];
-        _selectedColor = [UIColor whiteColor];
-        _currentIndex = 0;
-        _style = style;
-        _totalPages = totalPages;
-        _itemWidth = itemWidth;
-        _itemMargin = itemMargin;
-        
-    }
-    return self;
-}
+//- (instancetype)initWithFrame:(CGRect)frame
+//                 controlStyle:(WXPageControlStyle)style
+//                   totalPages:(NSInteger)totalPages
+//                    itemWidth:(CGFloat)itemWidth
+//                   itemMargin:(CGFloat)itemMargin{
+//    if (self = [super initWithFrame:frame]){
+//        _normalColor = [UIColor lightGrayColor];
+//        _selectedColor = [UIColor whiteColor];
+//        _currentIndex = 0;
+//        _style = style;
+//        _totalPages = totalPages;
+//        _itemWidth = itemWidth;
+//        _itemMargin = itemMargin;
+//
+//    }
+//    return self;
+//}
 
 - (instancetype)initWithFrame:(CGRect)frame {
-    if (self = [self initWithFrame:CGRectZero
-                      controlStyle:WXPageControlStyleRectangle
-                        totalPages:0
-                         itemWidth:0
-                        itemMargin:0]){
+    if (self = [super initWithFrame:frame]){
         
     }
     return self;
 }
+
 
 - (void)layoutSubviews{
     [super layoutSubviews];

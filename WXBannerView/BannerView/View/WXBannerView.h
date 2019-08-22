@@ -16,10 +16,17 @@ typedef NS_ENUM(NSInteger, WXBannerViewImageType) {
     WXBannerViewImageTypeNetIamge,/// 网络图片
     WXBannerViewImageTypeGIFImage,/// 网络GIF图片
 };
+/// 滚动方向
+typedef NS_ENUM(NSInteger, WXBannerViewRollDirection) {
+    WXBannerViewRollDirectionRightToLeft = 0, /// 默认，从右往左
+    WXBannerViewRollDirectionLeftToRight,    /// 从左往右
+};
 
 NS_ASSUME_NONNULL_BEGIN
 @class WXBannerView;
-@protocol KJBannerViewDelegate <NSObject>
+@class WXPageControl;
+
+@protocol WXBannerViewDelegate <NSObject>
 @optional
 /** 点击图片回调 */
 - (void)bannerView:(WXBannerView *)banner selectIndex:(NSInteger)index;
@@ -27,7 +34,32 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @interface WXBannerView : UIView
+/** 是否无线循环, 默认yes */
+@property (nonatomic,assign) BOOL infiniteLoop;
+/** 是否自动滑动, 默认yes */
+@property (nonatomic,assign) BOOL autoScroll;
+/// 是否缩放, 默认不缩放
+@property (nonatomic,assign) BOOL isZoom;
+/// 滚动方向，默认从右到左
+@property (nonatomic,assign) WXBannerViewRollDirection rollDirection;
+/// 自动滚动间隔时间, 默认2s
+@property (nonatomic,assign) CGFloat autoScrollTimeInterval;
 
+//MARK:- view property
+/** 分页控制器 */
+@property (nonatomic,strong) WXPageControl *pageControl;
+/** 占位图, 用于网络未加载到图片时 */
+@property (nonatomic,strong) UIImage *placeholderImage;
+/** 轮播图片的ContentMode, 默认为 UIViewContentModeScaleToFill */
+@property (nonatomic,assign) UIViewContentMode bannerImageViewContentMode;
+/// cell宽度  左右宽度
+@property (nonatomic,assign) CGFloat itemWidth;
+/// cell间距  上下高度, 默认为0
+@property (nonatomic,assign) CGFloat itemSpace;
+
+//MARK:- delegate
+/// 代理
+@property (nonatomic,weak) id<WXBannerViewDelegate> delegate;
 @end
 
 NS_ASSUME_NONNULL_END

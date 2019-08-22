@@ -35,16 +35,16 @@ typedef NS_ENUM(NSInteger, WXPageControlStyle){
 /// 非选中颜色, 默认lightGrayColor
 @property (nonatomic, strong)UIColor *normalColor;
 /// 样式, 默认WXPageControlStyleRectangle
-@property (nonatomic, assign, readonly)WXPageControlStyle style;
+@property (nonatomic, assign)WXPageControlStyle style;
 /// item的宽度,default:8
-@property (nonatomic, assign, readonly)CGFloat itemWidth;
+@property (nonatomic, assign)CGFloat itemWidth;
 /// item之间的间隔,default:4
-@property (nonatomic, assign, readonly)CGFloat itemMargin;
+@property (nonatomic, assign)CGFloat itemMargin;
 
-- (instancetype)initWithControlStyle:(WXPageControlStyle)style
-                          totalPages:(NSInteger)totalPages
-                           itemWidth:(CGFloat)itemWidth
-                          itemMargin:(CGFloat)itemMargin;
+//- (instancetype)initWithControlStyle:(WXPageControlStyle)style
+//                          totalPages:(NSInteger)totalPages
+//                           itemWidth:(CGFloat)itemWidth
+//                          itemMargin:(CGFloat)itemMargin;
 
 @end
 
