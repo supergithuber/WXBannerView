@@ -14,6 +14,7 @@
 
 @property (nonatomic,strong) WXBannerViewFlowLayout *flowLayout;
 @property (nonatomic,strong) UICollectionView *collectionView;
+@property (nonatomic,strong) NSTimer *timer;
 
 @end
 
@@ -29,12 +30,25 @@
 }
 
 - (void)commonConfig{
+    _infiniteLoop = YES;
+    _autoScroll = YES;
+    _isZoom = NO;
+    _itemWidth = self.bounds.size.width;
+    _itemSpace = 0;
     
 }
 
-//MARK:- collectionView
+//MARK:- collectionView dataSource
 
+//MARK:- collectionView delegate
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
 
+//MARK:- scrollViewDelegate
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView{
+    
+}
 
 //MARK:- lazy
 - (WXPageControl *)pageControl{
@@ -50,6 +64,18 @@
         _pageControl.currentIndex = 0;//[self currentIndex];
     }
     return _pageControl;
+}
+- (UICollectionView *)collectionView{
+    if(!_collectionView){
+        _collectionView = [[UICollectionView alloc]initWithFrame:self.bounds collectionViewLayout:self.flowLayout];
+        _collectionView.delegate = self;
+        _collectionView.dataSource = self;
+        _collectionView.scrollsToTop = NO;
+        _collectionView.showsVerticalScrollIndicator = NO;
+        _collectionView.showsHorizontalScrollIndicator = NO;
+        _collectionView.backgroundColor = self.backgroundColor;
+    }
+    return _collectionView;
 }
 - (WXBannerViewFlowLayout *)flowLayout{
     if(!_flowLayout){
