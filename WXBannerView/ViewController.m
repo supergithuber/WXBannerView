@@ -17,12 +17,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    WXPageControl *control = [[WXPageControl alloc]
-                              initWithControlStyle:WXPageControlStyleRectangle
-                              totalPages:8
-                              itemWidth:8
-                              itemMargin:4];
-    control.frame = CGRectMake(0, 100, self.view.frame.size.width, 15);
+    WXPageControl *control = [[WXPageControl alloc] initWithFrame:CGRectMake(0, 100, self.view.frame.size.width, 15)];
+    control.backgroundColor = UIColor.redColor;
+    control.style = WXPageControlStyleRectangle;
+    control.normalColor = UIColor.lightGrayColor;
+    control.selectedColor = UIColor.whiteColor;
+    control.totalPages = 8;
+    control.itemMargin = 4;
+    control.itemWidth = 8;
     [self.view addSubview:control];
     
 //    dispatch_queue_t queue = dispatch_queue_create("com.sivan.wu", DISPATCH_QUEUE_SERIAL);

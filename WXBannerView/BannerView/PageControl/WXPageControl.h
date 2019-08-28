@@ -27,7 +27,7 @@ typedef NS_ENUM(NSInteger, WXPageControlStyle){
 @interface WXPageControl : UIPageControl
 
 /// 总页数
-@property (nonatomic, assign, readonly)NSInteger totalPages;
+@property (nonatomic, assign)NSInteger totalPages;
 /// 当前页数
 @property (nonatomic, assign)NSInteger currentIndex;
 /// 选中颜色, 默认whiteColor
